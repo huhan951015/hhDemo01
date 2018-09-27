@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/dahuiji.css"/>
+	 
+	<body>
+		<div class="main" id="main">
+			<div id="score"></div>
+			<ul class="options" id="options">
+				<li level="200">非常简单</li>
+				<li level="500">比较简单</li>
+				<li level="900">比较困难</li>
+				<li level="1500">非常困难</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script src="js/public.js"></script>
+<script src="js/gameengine.js"></script>
+<script src="js/bullet.js"></script>
+<script src="js/myplane.js"></script>
+<script src="js/enemy.js"></script>
+<script type="text/javascript">
+	/*
+	四个角色 ： 
+	战斗机  : 创建    移动（监听鼠标或键盘）     开火  （单例模式）
+	敌机 ： 创建   移动     （三种不同类型）
+	子弹 ：  创建 移动  碰撞   ...
+	游戏引擎（单例模式）  ：   开始菜单        加载logo和动画飞机   背景移动     (程序入口在游戏引擎中)       
+	
+	* 面向对象注意  this指向
+	* 遇到事件、定时器  改变this指向
+	* */
+	window.onload = function(){
+		new GameEngine().initMenu();
+	}
+</script>
+ 
